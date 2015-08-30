@@ -4,7 +4,7 @@
 PORTNAME=	mpv
 PORTVERSION=	0.9.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://ftp.waf.io/pub/release/:1 \
@@ -17,7 +17,8 @@ COMMENT=	Free and open-source general-purpose video player
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
+		libfreetype.so:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	rst2man:${PORTSDIR}/textproc/py-docutils
 
 USE_GITHUB=	yes
@@ -134,7 +135,7 @@ XINERAMA_IMPLIES=		X11
 
 ZSH_USES=			perl5
 ZSH_USE=			PERL5=build
-ZSH_CONFIGURE_OFF=		--disable-zsh-comp
+ZSH_CONFIGURE_ENABLE=		zsh-comp
 
 .include <bsd.port.options.mk>
 
