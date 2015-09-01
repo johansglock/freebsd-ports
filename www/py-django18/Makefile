@@ -2,28 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	django
-PORTVERSION=	1.6.11
+PORTVERSION=	1.8.4
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		https://www.djangoproject.com/m/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-PKGNAMESUFFIX=	16
+PKGNAMESUFFIX=	18
 DISTNAME=	Django-${PORTVERSION}
 DIST_SUBDIR=	python
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	High-level Python Web Framework (1.6.x)
+COMMENT=	High-level Python Web Framework (1.8.x LTS)
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=		End of extended support: April 1, 2015
-EXPIRATION_DATE=	2015-10-01
-
 USES=		cpe python
 USE_PYTHON=	autoplist distutils
 
-CONFLICTS_INSTALL=	py??-django-devel-* py??-django-1.[012345789].*
+CONFLICTS_INSTALL=	py??-django-devel-* py??-django-1.[012345679].*
 CPE_VENDOR=		djangoproject
 
 DOCSDIR=	${PREFIX}/share/doc/py-django
@@ -36,9 +33,7 @@ OPTIONS_GROUP_DATABASE=	PGSQL MYSQL SQLITE
 
 HTMLDOCS_DESC=	Install HTML documentation (requires Sphinx)
 
-PLIST_FILES=	man/man1/daily_cleanup.1.gz \
-		man/man1/django-admin.1.gz \
-		man/man1/gather_profile_stats.1.gz
+PLIST_FILES=	man/man1/django-admin.1.gz
 
 PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:${PORTSDIR}/databases/py-psycopg2
 MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
