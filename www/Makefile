@@ -1500,6 +1500,7 @@
     SUBDIR += py-blogofile
     SUBDIR += py-bottle
     SUBDIR += py-bottle-cork
+    SUBDIR += py-cactus
     SUBDIR += py-cherrypy
     SUBDIR += py-cherrypy-old
     SUBDIR += py-clientform
@@ -1533,6 +1534,7 @@
     SUBDIR += py-django-keyedcache
     SUBDIR += py-django-ldapdb
     SUBDIR += py-django-livesettings
+    SUBDIR += py-django-markwhat
     SUBDIR += py-django-mezzanine
     SUBDIR += py-django-mezzanine-filebrowser
     SUBDIR += py-django-mezzanine-grappelli
