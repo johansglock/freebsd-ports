@@ -1,15 +1,14 @@
-%%CLI%%bin/php
-%%CGI%%bin/php-cgi
+bin/php
+bin/php-cgi
 bin/php-config
-%%PHPDBG%%bin/phpdbg
+bin/phpdbg
 bin/phpize
-%%FPM%%sbin/php-fpm
+etc/php-fpm.conf.default
+etc/php-fpm.d/www.conf.default
 etc/php.conf
 etc/php.ini-development
 etc/php.ini-production
 etc/rc.d/php-fpm
-etc/php-fpm.conf.default
-etc/php-fpm.d/www.conf.default
 include/php/TSRM/TSRM.h
 include/php/TSRM/readdir.h
 include/php/TSRM/tsrm_config.h
@@ -68,6 +67,7 @@ include/php/Zend/zend_objects_API.h
 include/php/Zend/zend_operators.h
 include/php/Zend/zend_portability.h
 include/php/Zend/zend_ptr_stack.h
+include/php/Zend/zend_range_check.h
 include/php/Zend/zend_signal.h
 include/php/Zend/zend_smart_str.h
 include/php/Zend/zend_smart_str_public.h
@@ -223,7 +223,7 @@ include/php/main/streams/php_stream_transport.h
 include/php/main/streams/php_stream_userspace.h
 include/php/main/streams/php_streams_int.h
 include/php/main/win95nt.h
-%%CLI%%include/php/sapi/cli/cli.h
+include/php/sapi/cli/cli.h
 lib/php/build/Makefile.global
 lib/php/build/acinclude.m4
 lib/php/build/config.guess
@@ -235,11 +235,12 @@ lib/php/build/phpize.m4
 lib/php/build/run-tests.php
 lib/php/build/scan_makefile_in.awk
 lib/php/build/shtool
-%%CGI%%man/man1/php-cgi.1.gz
+man/man1/php-cgi.1.gz
 man/man1/php-config.1.gz
-%%CLI%%man/man1/php.1.gz
-%%PHPDBG%%man/man1/phpdbg.1.gz
+man/man1/php.1.gz
+man/man1/phpdbg.1.gz
 man/man1/phpize.1.gz
-%%FPM%%man/man8/php-fpm.8.gz
-%%FPM%%share/php/fpm/status.html
+man/man8/php-fpm.8.gz
+sbin/php-fpm
+share/php/fpm/status.html
 @dir include/php/include

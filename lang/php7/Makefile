@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	php7
-PORTVERSION=	7.0.0rc1
-PORTREVISION?=	0
+PORTVERSION=	7.0.0rc2
+PORTREVISION?=	1
 CATEGORIES?=	lang devel www
 MASTER_SITES=	https://downloads.php.net/~ab/
-DISTNAME=	php-7.0.0RC1
+DISTNAME=	php-7.0.0RC2
 
 MAINTAINER=	johan@300.nl
 COMMENT=	PHP Scripting Language
