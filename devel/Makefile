@@ -2688,6 +2688,7 @@
     SUBDIR += p5-MooseX-Types-DateTime
     SUBDIR += p5-MooseX-Types-DateTime-ButMaintained
     SUBDIR += p5-MooseX-Types-DateTime-MoreCoercions
+    SUBDIR += p5-MooseX-Types-DateTime-MySQL
     SUBDIR += p5-MooseX-Types-DateTimeX
     SUBDIR += p5-MooseX-Types-ISO8601
     SUBDIR += p5-MooseX-Types-JSON
@@ -3858,6 +3859,7 @@
     SUBDIR += py-apipkg
     SUBDIR += py-appdirs
     SUBDIR += py-application
+    SUBDIR += py-apscheduler
     SUBDIR += py-archetypes.querywidget
     SUBDIR += py-archetypes.referencebrowserwidget
     SUBDIR += py-archetypes.schemaextender
@@ -4173,6 +4175,7 @@
     SUBDIR += py-python-statsd
     SUBDIR += py-python2-pythondialog
     SUBDIR += py-pythonbrew
+    SUBDIR += py-pytimeparse
     SUBDIR += py-pytrie
     SUBDIR += py-pytz
     SUBDIR += py-pyutil
