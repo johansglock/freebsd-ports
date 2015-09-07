@@ -373,7 +373,6 @@
     SUBDIR += macchanger
     SUBDIR += mad_fcl
     SUBDIR += malo-firmware-kmod
-    SUBDIR += mcast-tools
     SUBDIR += mdns-repeater
     SUBDIR += mediastreamer
     SUBDIR += mediatomb
@@ -879,6 +878,9 @@
     SUBDIR += php56-sockets
     SUBDIR += php56-xmlrpc
     SUBDIR += phpldapadmin
+    SUBDIR += pim6-tools
+    SUBDIR += pim6dd
+    SUBDIR += pim6sd
     SUBDIR += pimd
     SUBDIR += pimdd
     SUBDIR += pipsecd
@@ -1168,6 +1170,7 @@
     SUBDIR += slurm
     SUBDIR += smb4k-kde4
     SUBDIR += smbldap-tools
+    SUBDIR += smcroute
     SUBDIR += smm++
     SUBDIR += sniffit
     SUBDIR += sntop
