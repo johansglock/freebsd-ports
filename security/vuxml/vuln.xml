@@ -58,6 +58,145 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d68df01b-564e-11e5-9ad8-14dae9d210b8">
+    <topic>ganglia-webfrontend -- auth bypass</topic>
+    <affects>
+      <package>
+	<name>ganglia-webfrontend</name>
+	<range><lt>3.7.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ivan Novikov reports:</p>
+	<blockquote cite="https://github.com/ganglia/ganglia-web/issues/267">
+	  <p>It's easy to bypass auth by using boolean serialization...</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/ganglia/ganglia-web/issues/267</url>
+      <cvename>CVE-2015-6816</cvename>
+    </references>
+    <dates>
+      <discovery>2015-09-04</discovery>
+      <entry>2015-09-08</entry>
+      <modified>2015-09-08</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="9bdd8eb5-564a-11e5-9ad8-14dae9d210b8">
+    <topic>wireshark -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>wireshark</name>
+	<name>wireshark-lite</name>
+	<name>wireshark-qt5</name>
+	<name>tshark</name>
+	<name>tshark-lite</name>
+	<range><lt>1.12.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Wireshark development team reports:</p>
+	<blockquote cite="https://www.wireshark.org/docs/relnotes/wireshark-1.12.7.html">
+	  <p>The following vulnerabilities have been fixed.</p>
+	  <ul>
+	    <li><p>wnpa-sec-2015-21</p>
+	      <p>Protocol tree crash. (Bug 11309)</p></li>
+	    <li><p>wnpa-sec-2015-22</p>
+	      <p>Memory manager crash. (Bug 11373)</p></li>
+	    <li><p>wnpa-sec-2015-23</p>
+	      <p>Dissector table crash. (Bug 11381)</p></li>
+	    <li><p>wnpa-sec-2015-24</p>
+	      <p>ZigBee crash. (Bug 11389)</p></li>
+	    <li><p>wnpa-sec-2015-25</p>
+	      <p>GSM RLC/MAC infinite loop. (Bug 11358)</p></li>
+	    <li><p>wnpa-sec-2015-26</p>
+	      <p>WaveAgent crash. (Bug 11358)</p></li>
+	    <li><p>wnpa-sec-2015-27</p>
+	      <p>OpenFlow infinite loop. (Bug 11358)</p></li>
+	    <li><p>wnpa-sec-2015-28</p>
+	      <p>Ptvcursor crash. (Bug 11358)</p></li>
+	    <li><p>wnpa-sec-2015-29</p>
+	      <p>WCCP crash. (Bug 11358)</p></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.wireshark.org/docs/relnotes/wireshark-1.12.7.html</url>
+      <cvename>CVE-2015-6241</cvename>
+      <cvename>CVE-2015-6242</cvename>
+      <cvename>CVE-2015-6243</cvename>
+      <cvename>CVE-2015-6244</cvename>
+      <cvename>CVE-2015-6245</cvename>
+      <cvename>CVE-2015-6246</cvename>
+      <cvename>CVE-2015-6247</cvename>
+      <cvename>CVE-2015-6248</cvename>
+      <cvename>CVE-2015-6249</cvename>
+    </references>
+    <dates>
+      <discovery>2015-08-12</discovery>
+      <entry>2015-09-08</entry>
+      <modified>2015-09-08</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="98092444-5645-11e5-9ad8-14dae9d210b8">
+    <topic>screen -- stack overflow</topic>
+    <affects>
+      <package>
+	<name>screen</name>
+	<range><lt>4.3.1_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kuang-che Wu reports:</p>
+	<blockquote cite="https://savannah.gnu.org/bugs/?45713">
+	  <p>screen will recursively call MScrollV to depth n/256. This
+	    is time consuming and will overflow stack if n is huge.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://savannah.gnu.org/bugs/?45713</url>
+      <cvename>CVE-2015-6806</cvename>
+    </references>
+    <dates>
+      <discovery>2015-08-07</discovery>
+      <entry>2015-09-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b5e654c3-5644-11e5-9ad8-14dae9d210b8">
+    <topic>libvncserver -- memory corruption</topic>
+    <affects>
+      <package>
+	<name>libvncserver</name>
+	<range><lt>0.9.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Petr Pisar reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=706087">
+	  <p>libvncserver/tight.c:rfbTightCleanup() frees a buffer without zeroing freed pointer.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=706087</url>
+      <url>https://github.com/LibVNC/libvncserver/commit/804335f9d296440bb708ca844f5d89b58b50b0c6</url>
+    </references>
+    <dates>
+      <discovery>2011-05-19</discovery>
+      <entry>2015-09-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ed0ecad5-531d-11e5-9850-bcaec565249c">
     <topic>gdk-pixbuf2 -- integer overflows</topic>
     <affects>
