@@ -1,14 +1,14 @@
---- oggenc/audio.c.orig	2010-03-24 08:27:14 UTC
-+++ oggenc/audio.c
-@@ -13,6 +13,7 @@
- #include <config.h>
+--- src/audio-in.c.orig	2014-02-26 00:55:47 UTC
++++ src/audio-in.c
+@@ -42,6 +42,7 @@
+ # define _FILE_OFFSET_BITS 64
  #endif
  
 +#include <limits.h>
  #include <stdlib.h>
  #include <stdio.h>
  #include <string.h>
-@@ -245,12 +246,13 @@ static int aiff_permute_matrix[6][6] = 
+@@ -287,13 +288,14 @@ static int aiff_permute_matrix[6][6] =
  int aiff_open(FILE *in, oe_enc_opt *opt, unsigned char *buf, int buflen)
  {
      int aifc; /* AIFC or AIFF? */
@@ -17,14 +17,15 @@
 +    unsigned int len, readlen;
 +    unsigned char buffer[22];
      unsigned char buf2[8];
+     int bigendian = 1;
      aiff_fmt format;
-     aifffile *aiff = malloc(sizeof(aifffile));
+     aifffile *aiff;
      int i;
 +    long channels;
+     (void)buflen;/*unused*/
  
      if(buf[11]=='C')
-         aifc=1;
-@@ -269,19 +271,25 @@ int aiff_open(FILE *in, oe_enc_opt *opt,
+@@ -313,19 +315,25 @@ int aiff_open(FILE *in, oe_enc_opt *opt,
          return 0; /* Weird common chunk */
      }
  
@@ -33,9 +34,9 @@
 -    if(fread(buffer,1,len,in) < len)
 +    readlen = len < sizeof(buffer) ? len : sizeof(buffer);
 +    if(fread(buffer,1,readlen,in) < readlen ||
-+       (len > readlen && !seek_forward(in, len-readlen)))
++        (len > readlen && !seek_forward(in, len-readlen)))
      {
-         fprintf(stderr, _("Warning: Unexpected EOF in reading AIFF header\n"));
+         fprintf(stderr, _("Warning: Unexpected EOF reading AIFF header\n"));
          return 0;
      }
  
@@ -47,22 +48,22 @@
  
 +    if(channels <= 0L || SHRT_MAX < channels)
 +    {
-+         fprintf(stderr, _("Warning: Unsupported count of channels in AIFF header\n"));
-+         return 0;
++        fprintf(stderr, _("Warning: Unsupported count of channels in AIFF header\n"));
++        return 0;
 +    }
 +
-     aiff->bigendian = 1;
- 
      if(aifc)
-@@ -412,6 +420,7 @@ int wav_open(FILE *in, oe_enc_opt *opt, 
+     {
+         if(len < 22)
+@@ -442,6 +450,7 @@ int wav_open(FILE *in, oe_enc_opt *opt, 
      wav_fmt format;
-     wavfile *wav = malloc(sizeof(wavfile));
+     wavfile *wav;
      int i;
 +    long channels;
+     (void)buflen;/*unused*/
+     (void)oldbuf;/*unused*/
  
-     /* Ok. At this point, we know we have a WAV file. Now we have to detect
-      * whether we support the subtype, and we have to find the actual data
-@@ -449,12 +458,18 @@ int wav_open(FILE *in, oe_enc_opt *opt, 
+@@ -481,12 +490,18 @@ int wav_open(FILE *in, oe_enc_opt *opt, 
      }
  
      format.format =      READ_U16_LE(buf);
