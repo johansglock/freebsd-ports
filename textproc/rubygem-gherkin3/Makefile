@@ -1,17 +1,16 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	cucumber-core
-PORTVERSION=	1.3.0
-CATEGORIES=	devel rubygems
+PORTNAME=	gherkin3
+PORTVERSION=	3.1.1
+CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Core library for the Cucumber BDD app
+COMMENT=	Gherkin parser
 
 LICENSE=	MIT
-
-RUN_DEPENDS=	rubygem-gherkin3>=3.1.0:${PORTSDIR}/textproc/rubygem-gherkin3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
 USE_RUBY=	yes
