@@ -3,14 +3,14 @@
 
 PORTNAME=	memcached
 PORTVERSION=	2.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
 PKGNAMEPREFIX=	pecl-
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	php-memcached-dev
 GH_PROJECT=	php-memcached
-GH_TAGNAME=	fe3090e08b7a9132036e3ffdcdf783c63e9218f1
+GH_TAGNAME=	a24e439cb6f9c38d1a51c0df2cf6dab79e0a14bc
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP extension for interfacing with memcached via libmemcached library
