@@ -145,6 +145,12 @@ LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 USE_OPENSSL=	yes
 .endif
 
+.if ${PHP_MODNAME} == "intl"
+CONFIGURE_ARGS+=--enable-intl
+
+BUILD_DEPENDS+=  /usr/local/bin/icu-config:${PORTSDIR}/devel/icu
+.endif
+
 .if ${PHP_MODNAME} == "interbase"
 CONFIGURE_ARGS+=--with-interbase=${LOCALBASE}
 
