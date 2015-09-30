@@ -148,7 +148,7 @@ USE_OPENSSL=	yes
 .if ${PHP_MODNAME} == "intl"
 CONFIGURE_ARGS+=--enable-intl
 
-BUILD_DEPENDS+=  /usr/local/bin/icu-config:${PORTSDIR}/devel/icu
+LIB_DEPENDS=    libicui18n.so:${PORTSDIR}/devel/icu
 .endif
 
 .if ${PHP_MODNAME} == "interbase"
