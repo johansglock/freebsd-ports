@@ -5,7 +5,7 @@ PORTNAME=	memcached
 PORTVERSION=	2.2.0
 PORTREVISION=	6
 CATEGORIES=	databases
-PKGNAMEPREFIX=	pecl-
+PKGNAMEPREFIX=	php7-pecl-
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	php-memcached-dev
