@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}
-PORTREVISION=	16
+PORTREVISION=	18
 CATEGORIES=	editors java
 MASTER_SITES=	APACHE/openoffice/${PORTVERSION}/source \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
@@ -121,6 +121,7 @@ USE_GL=		gl glu
 USE_GNOME=	gtk20 libxslt libidl glib20
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
+JAVA_RUN=	jdk
 JAVA_VENDOR=	openjdk
 JAVA_VERSION=	1.6+
 USE_PERL5=	build
@@ -249,7 +250,6 @@ CONFIGURE_ARGS+=							\
 			--with-system-sane				\
 			--with-system-serf				\
 			--with-system-stdlibs				\
-			--enable-symbols=small				\
 			--without-stlport				\
 			--with-vendor="FreeBSD ports system"		\
 			--enable-verbose				\
@@ -324,6 +324,8 @@ post-extract:
 post-patch:
 	${REINPLACE_CMD} -e "/^ICONVERSION/s/=.*/= '-${AOOSUFFIX}'/" \
 		${WRKSRC}/sysui/desktop/productversion.mk
+	${REINPLACE_CMD} -e "s|%%JAVA_HOME%%|${JAVA_HOME}|" \
+		${WRKSRC}/desktop/scripts/soffice.sh
 .if ${COMPILER_TYPE} == gcc
 	# g++49 -Os sometimes leaves inline class methods undefined,
 	# affects fmgridif.cxx and ColumnControl.cxx
@@ -401,10 +403,6 @@ do-install:
 	cd ${WRKSRC}/solver/${AOOXXX}/unxfbsd?.pro/bin/ ; \
 		${INSTALL_DATA} ${AOOEXTENSIONS} \
 			${STAGEDIR}${PRINSTALLATION_BASEDIR}/extensions/
-	@cd ${STAGEDIR}${OOPATH}/program ; \
-		${ECHO_CMD} "stripping executables and shared libraries" ; \
-		${STRIP_CMD} crashrep pagein uri-encode javaldx regmerge \
-			regview *.so* *.bin
 	${FIND} ${STAGEDIR}${PRINSTALLATION_BASEDIR} -type d -exec ${CHMOD} 755 {} \;
 	${REINPLACE_CMD} \
 		-e '/^UserInstallation/s/=.*/=$$SYSUSERCONFIG\/${AOOUDIR}/' \

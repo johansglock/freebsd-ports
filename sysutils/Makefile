@@ -27,6 +27,7 @@
     SUBDIR += aird
     SUBDIR += am-utils
     SUBDIR += amrstat
+    SUBDIR += amtc
     SUBDIR += anacron
     SUBDIR += and
     SUBDIR += ansible
@@ -889,6 +890,8 @@
     SUBDIR += rubygem-rubyipmi
     SUBDIR += rubygem-shellany
     SUBDIR += rubygem-smart_proxy_chef
+    SUBDIR += rubygem-smart_proxy_dynflow
+    SUBDIR += rubygem-smart_proxy_remote_execution_ssh
     SUBDIR += rubygem-smart_proxy_salt
     SUBDIR += rubygem-sys-admin
     SUBDIR += rubygem-sys-cpu
@@ -910,6 +913,7 @@
     SUBDIR += samefile
     SUBDIR += samesame
     SUBDIR += sas2ircu
+    SUBDIR += sas3ircu
     SUBDIR += savelogs
     SUBDIR += sb16config
     SUBDIR += sbsigntool
@@ -1072,6 +1076,7 @@
     SUBDIR += vimpager
     SUBDIR += virtualmin
     SUBDIR += vlogger
+    SUBDIR += vm-bhyve
     SUBDIR += vmdktool
     SUBDIR += vmtouch
     SUBDIR += vobcopy
