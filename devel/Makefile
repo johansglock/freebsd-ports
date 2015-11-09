@@ -8,6 +8,7 @@
     SUBDIR += ElectricFence
     SUBDIR += ORBit2
     SUBDIR += ORBit2-reference
+    SUBDIR += R-cran-BH
     SUBDIR += R-cran-Defaults
     SUBDIR += R-cran-Hmisc
     SUBDIR += R-cran-R6
@@ -44,6 +45,9 @@
     SUBDIR += SpecTcl
     SUBDIR += aap
     SUBDIR += aarch64-binutils
+    SUBDIR += amd64-binutils
+    SUBDIR += amd64-gcc
+    SUBDIR += amd64-xtoolchain-gcc
     SUBDIR += abi-compliance-checker
     SUBDIR += ace
     SUBDIR += ace+tao-doc
@@ -71,6 +75,7 @@
     SUBDIR += anjuta-extras
     SUBDIR += antlr
     SUBDIR += antlr3
+    SUBDIR += antlr4
     SUBDIR += antlrworks
     SUBDIR += apache-ant
     SUBDIR += api-sanity-autotest
@@ -393,6 +398,7 @@
     SUBDIR += dragon
     SUBDIR += dreampie
     SUBDIR += drpython
+    SUBDIR += ds2
     SUBDIR += dulwich
     SUBDIR += duplo
     SUBDIR += dwarfdump
@@ -499,6 +505,7 @@
     SUBDIR += f77flow
     SUBDIR += fam
     SUBDIR += fastcrc
+    SUBDIR += fb-adb
     SUBDIR += fb303
     SUBDIR += fc++
     SUBDIR += ffcall
@@ -1052,6 +1059,7 @@
     SUBDIR += json-c
     SUBDIR += json-glib
     SUBDIR += jsoncpp
+    SUBDIR += jsonnet
     SUBDIR += jtag
     SUBDIR += judy
     SUBDIR += jwasm
@@ -1137,6 +1145,7 @@
     SUBDIR += libdisasm
     SUBDIR += libdisorder
     SUBDIR += libdispatch
+    SUBDIR += libdistance
     SUBDIR += libdlmalloc
     SUBDIR += libdlna
     SUBDIR += libdnsres
@@ -1260,7 +1269,6 @@
     SUBDIR += libpeak
     SUBDIR += libpeas
     SUBDIR += libpff
-    SUBDIR += libphish
     SUBDIR += libphk
     SUBDIR += libphutil
     SUBDIR += libplist
@@ -1437,6 +1445,7 @@
     SUBDIR += maven-wrapper
     SUBDIR += maven3
     SUBDIR += maven31
+    SUBDIR += maven33
     SUBDIR += mcpp
     SUBDIR += mdds
     SUBDIR += memcheck
@@ -1482,6 +1491,7 @@
     SUBDIR += msgpack
     SUBDIR += msgpuck
     SUBDIR += msp430-binutils
+    SUBDIR += msp430-debug-stack
     SUBDIR += msp430-gcc
     SUBDIR += msp430-gdb
     SUBDIR += msp430-libc
@@ -3666,6 +3676,7 @@
     SUBDIR += pecl-jsmin
     SUBDIR += pecl-jsonc
     SUBDIR += pecl-jsond
+    SUBDIR += pecl-jsonnet
     SUBDIR += pecl-judy
     SUBDIR += pecl-libevent
     SUBDIR += pecl-mcve
@@ -3707,6 +3718,7 @@
     SUBDIR += phabricator
     SUBDIR += php-Psr_Log
     SUBDIR += php-composer
+    SUBDIR += php-jq
     SUBDIR += php-libawl
     SUBDIR += php-memoize
     SUBDIR += php-scalar_objects
@@ -3749,7 +3761,6 @@
     SUBDIR += php56-tokenizer
     SUBDIR += phpbt
     SUBDIR += phpsh
-    SUBDIR += phptags
     SUBDIR += phpunit
     SUBDIR += physfs
     SUBDIR += physfs-devel
@@ -3904,6 +3915,7 @@
     SUBDIR += py-babel
     SUBDIR += py-babelfish
     SUBDIR += py-backports.shutil_get_terminal_size
+    SUBDIR += py-backports_abc
     SUBDIR += py-bcdoc
     SUBDIR += py-billiard
     SUBDIR += py-binplist
@@ -4024,6 +4036,7 @@
     SUBDIR += py-geotypes
     SUBDIR += py-gevent
     SUBDIR += py-gflags
+    SUBDIR += py-git-up
     SUBDIR += py-gitdb
     SUBDIR += py-gitosis
     SUBDIR += py-gitpython
@@ -4135,7 +4148,6 @@
     SUBDIR += py-ordereddict
     SUBDIR += py-palm
     SUBDIR += py-parsedatetime
-    SUBDIR += py-parsing
     SUBDIR += py-path.py
     SUBDIR += py-pathlib
     SUBDIR += py-pathtools
@@ -4151,6 +4163,7 @@
     SUBDIR += py-pip
     SUBDIR += py-plan
     SUBDIR += py-plex
+    SUBDIR += py-pluggy
     SUBDIR += py-ply
     SUBDIR += py-polib
     SUBDIR += py-posix_ipc
@@ -4180,7 +4193,6 @@
     SUBDIR += py-pyflakes
     SUBDIR += py-pygit2
     SUBDIR += py-pygithub
-    SUBDIR += py-pygitup
     SUBDIR += py-pygpx
     SUBDIR += py-pykde4
     SUBDIR += py-pykdeuic4
@@ -4189,6 +4201,7 @@
     SUBDIR += py-pympler
     SUBDIR += py-pymtbl
     SUBDIR += py-pyopencl
+    SUBDIR += py-pyparsing
     SUBDIR += py-pyrfc3339
     SUBDIR += py-pyro
     SUBDIR += py-pyshapelib
@@ -4210,6 +4223,8 @@
     SUBDIR += py-pytrie
     SUBDIR += py-pytz
     SUBDIR += py-pyutil
+    SUBDIR += py-pyvisa
+    SUBDIR += py-pyvisa-py
     SUBDIR += py-pyxml2obj
     SUBDIR += py-qpid
     SUBDIR += py-qserve
@@ -4468,8 +4483,6 @@
     SUBDIR += pysvn
     SUBDIR += pythk
     SUBDIR += pythontidy
-    SUBDIR += pyvisa
-    SUBDIR += pyvisa-py
     SUBDIR += qbzr
     SUBDIR += qca
     SUBDIR += qca-qt5
@@ -4560,7 +4573,6 @@
     SUBDIR += roboctl
     SUBDIR += robodoc
     SUBDIR += root-doc
-    SUBDIR += ros
     SUBDIR += rote
     SUBDIR += rpc2
     SUBDIR += rpm-spec-mode.el
@@ -4692,7 +4704,6 @@
     SUBDIR += rubygem-daemon_controller
     SUBDIR += rubygem-daemons
     SUBDIR += rubygem-debug_inspector
-    SUBDIR += rubygem-debugger
     SUBDIR += rubygem-debugger-linecache
     SUBDIR += rubygem-debugger-xml
     SUBDIR += rubygem-deep_merge
@@ -4962,6 +4973,7 @@
     SUBDIR += rubygem-slack-notifier
     SUBDIR += rubygem-slim
     SUBDIR += rubygem-slop
+    SUBDIR += rubygem-slop3
     SUBDIR += rubygem-soap4r
     SUBDIR += rubygem-spring
     SUBDIR += rubygem-sprockets
@@ -5095,6 +5107,7 @@
     SUBDIR += splint
     SUBDIR += srecord
     SUBDIR += st
+    SUBDIR += staf
     SUBDIR += statcvs
     SUBDIR += statik
     SUBDIR += statsvn

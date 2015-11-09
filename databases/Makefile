@@ -244,6 +244,7 @@
     SUBDIR += openark-kit
     SUBDIR += openbase-jdbc
     SUBDIR += opendbx
+    SUBDIR += opentsdb
     SUBDIR += oracle7-client
     SUBDIR += oracle8-client
     SUBDIR += oracle_odbc_driver
@@ -740,12 +741,12 @@
     SUBDIR += py-kyotocabinet
     SUBDIR += py-leveldb
     SUBDIR += py-memcached
-    SUBDIR += py-mssql
     SUBDIR += py-mysql-connector-python
     SUBDIR += py-mysql-connector-python2
     SUBDIR += py-mysql2pgsql
     SUBDIR += py-odbc
     SUBDIR += py-oops
+    SUBDIR += py-oursql
     SUBDIR += py-peewee
     SUBDIR += py-pg8000
     SUBDIR += py-pg_pqueue
