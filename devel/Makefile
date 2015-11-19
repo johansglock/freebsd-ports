@@ -45,9 +45,6 @@
     SUBDIR += SpecTcl
     SUBDIR += aap
     SUBDIR += aarch64-binutils
-    SUBDIR += amd64-binutils
-    SUBDIR += amd64-gcc
-    SUBDIR += amd64-xtoolchain-gcc
     SUBDIR += abi-compliance-checker
     SUBDIR += ace
     SUBDIR += ace+tao-doc
@@ -66,6 +63,9 @@
     SUBDIR += allegro
     SUBDIR += allegro-devel
     SUBDIR += alog
+    SUBDIR += amd64-binutils
+    SUBDIR += amd64-gcc
+    SUBDIR += amd64-xtoolchain-gcc
     SUBDIR += android-tools-adb
     SUBDIR += android-tools-adb-devel
     SUBDIR += android-tools-fastboot
@@ -96,8 +96,10 @@
     SUBDIR += arm-none-eabi-binutils
     SUBDIR += arm-none-eabi-gcc
     SUBDIR += arm-none-eabi-gcc492
+    SUBDIR += arm-none-eabi-gdb
     SUBDIR += aros-sdk
     SUBDIR += art
+    SUBDIR += artifactory
     SUBDIR += as31
     SUBDIR += asl
     SUBDIR += asmutils
@@ -428,6 +430,7 @@
     SUBDIR += elixir-calendar
     SUBDIR += elixir-combine
     SUBDIR += elixir-conform
+    SUBDIR += elixir-connection
     SUBDIR += elixir-coverex
     SUBDIR += elixir-csv
     SUBDIR += elixir-decimal
@@ -3903,8 +3906,6 @@
     SUBDIR += py-argh
     SUBDIR += py-argparse
     SUBDIR += py-args
-    SUBDIR += py-asn1
-    SUBDIR += py-asn1-modules
     SUBDIR += py-aspects
     SUBDIR += py-aspyct
     SUBDIR += py-astroid
@@ -3994,11 +3995,11 @@
     SUBDIR += py-efl
     SUBDIR += py-eggtestinfo
     SUBDIR += py-enum34
+    SUBDIR += py-envisage
     SUBDIR += py-epdb
     SUBDIR += py-epsilon
     SUBDIR += py-evdev
     SUBDIR += py-event
-    SUBDIR += py-experimental.cssselect
     SUBDIR += py-extras
     SUBDIR += py-extremes
     SUBDIR += py-ezpyinline
@@ -4018,11 +4019,14 @@
     SUBDIR += py-foolscap
     SUBDIR += py-fortran
     SUBDIR += py-freebsd
+    SUBDIR += py-freenas.dispatcher
+    SUBDIR += py-freenas.utils
     SUBDIR += py-freezegun
     SUBDIR += py-fs
     SUBDIR += py-fsm
     SUBDIR += py-fudge
     SUBDIR += py-funcparserlib
+    SUBDIR += py-functools32
     SUBDIR += py-fusefs
     SUBDIR += py-future
     SUBDIR += py-futures
@@ -4180,6 +4184,8 @@
     SUBDIR += py-pudb
     SUBDIR += py-px
     SUBDIR += py-py
+    SUBDIR += py-pyasn1
+    SUBDIR += py-pyasn1-modules
     SUBDIR += py-pycalendar
     SUBDIR += py-pycallgraph
     SUBDIR += py-pycerberus
@@ -4222,6 +4228,7 @@
     SUBDIR += py-pytools
     SUBDIR += py-pytrie
     SUBDIR += py-pytz
+    SUBDIR += py-pytz3
     SUBDIR += py-pyutil
     SUBDIR += py-pyvisa
     SUBDIR += py-pyvisa-py
@@ -4243,6 +4250,7 @@
     SUBDIR += py-qt4-test
     SUBDIR += py-rauth
     SUBDIR += py-raven
+    SUBDIR += py-rednose
     SUBDIR += py-repl
     SUBDIR += py-repoze.lru
     SUBDIR += py-repoze.sphinx.autointerface
@@ -4284,6 +4292,7 @@
     SUBDIR += py-setuptools35
     SUBDIR += py-setuptools_darcs
     SUBDIR += py-setuptools_hg
+    SUBDIR += py-setuptools_scm
     SUBDIR += py-sh
     SUBDIR += py-shapely
     SUBDIR += py-simplegeneric
@@ -4317,6 +4326,7 @@
     SUBDIR += py-tconfpy
     SUBDIR += py-tempstorage
     SUBDIR += py-termcolor
+    SUBDIR += py-termstyle
     SUBDIR += py-testgears
     SUBDIR += py-testoob
     SUBDIR += py-testtools
@@ -4353,6 +4363,7 @@
     SUBDIR += py-user_agents
     SUBDIR += py-utils
     SUBDIR += py-validictory
+    SUBDIR += py-vcversioner
     SUBDIR += py-venusian
     SUBDIR += py-versiontools
     SUBDIR += py-virtualenv
@@ -4627,6 +4638,7 @@
     SUBDIR += rubygem-app_config
     SUBDIR += rubygem-arrayfields
     SUBDIR += rubygem-ascii85
+    SUBDIR += rubygem-asetus
     SUBDIR += rubygem-aspectr
     SUBDIR += rubygem-ast
     SUBDIR += rubygem-astrolabe
@@ -4679,6 +4691,7 @@
     SUBDIR += rubygem-classifier-reborn
     SUBDIR += rubygem-climate_control
     SUBDIR += rubygem-clio
+    SUBDIR += rubygem-cliprompt
     SUBDIR += rubygem-cloudfiles
     SUBDIR += rubygem-cocaine
     SUBDIR += rubygem-coercible
@@ -4693,6 +4706,7 @@
     SUBDIR += rubygem-concurrent-ruby
     SUBDIR += rubygem-concurrent-ruby-edge
     SUBDIR += rubygem-configatron
+    SUBDIR += rubygem-configstruct
     SUBDIR += rubygem-configuration
     SUBDIR += rubygem-cool.io
     SUBDIR += rubygem-crack

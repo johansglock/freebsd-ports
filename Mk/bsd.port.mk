@@ -565,7 +565,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR} "! -name *\.bak"
 #
 #				  Installs all directories and files from ${WRKSRC}/doc
-#				  to ${DOCSDIR} except sed backup files.
+#				  to ${DOCSDIR} except sed(1) backup files.
 #
 # MANPREFIX		- The directory prefix for ${MAN<sect>} and ${MLINKS}.
 #				  Default: ${PREFIX}
@@ -898,7 +898,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # PLIST_SUB		- List of "variable=value" pair for substitution in ${PLIST}
 #				  Default: see below
 #
-# SUB_FILES		- Files that should be passed through sed and redirected to
+# SUB_FILES		- Files that should be passed through sed(1) and redirected to
 #				  ${WRKDIR}.
 #				- For each file specified in SUB_FILES, there must be a
 #				  corresponding file in ${FILESDIR} whose suffix is ".in". For
@@ -1114,44 +1114,12 @@ STRIPBIN=	${STRIP_CMD}
 
 .else
 
-# Look for files named "*.orig" under ${PATCH_WRKSRC} and (re-)generate
-# ${PATCHDIR}/patch-* files from them.  By popular demand, we currently
-# use '_' (underscore) to replace path separators in patch file names.
-#
-# If a file name happens to contain character which is also a separator
-# replacement character, it will be doubled in the resulting patch name.
-#
-# To minimize gratuitous patch renames, newly generated patches will be
-# written under existing file names when they use any of the previously
-# common path separators ([-+_]) or legacy double underscore (__).
-
 .if !target(makepatch)
-PATCH_PATH_SEPARATOR=	_
 makepatch:
-	@${MKDIR} ${PATCHDIR}
-	@(cd ${PATCH_WRKSRC}; \
-		for f in `${FIND} -s . -type f -name '*.orig'`; do \
-			ORIG=$${f#./}; \
-			NEW=$${ORIG%.orig}; \
-			cmp -s $${ORIG} $${NEW} && continue; \
-			! for _lps in `${ECHO} _ - + | ${SED} -e \
-				's|${PATCH_PATH_SEPARATOR}|__|'`; do \
-					PATCH=`${ECHO} $${NEW} | ${SED} -e "s|/|$${_lps}|g"`; \
-					test -f "${PATCHDIR}/patch-$${PATCH}" && break; \
-			done || ${ECHO} $${_SEEN} | ${GREP} -q /$${PATCH} && { \
-				PATCH=`${ECHO} $${NEW} | ${SED} -e \
-					's|${PATCH_PATH_SEPARATOR}|&&|g' -e \
-					's|/|${PATCH_PATH_SEPARATOR}|g'`; \
-				_SEEN=$${_SEEN}/$${PATCH}; \
-			}; \
-			OUT=${PATCHDIR}/patch-$${PATCH}; \
-			${ECHO} ${DIFF} -udp $${ORIG} $${NEW} '>' $${OUT}; \
-			TZ=UTC ${DIFF} -udp $${ORIG} $${NEW} | ${SED} -e \
-				'/^---/s|\.[0-9]* +0000$$| UTC|' -e \
-				'/^+++/s|\([[:blank:]][-0-9:.+]*\)*$$||' \
-					> $${OUT} || ${TRUE}; \
-		done \
-	)
+	@${SETENV} WRKDIR=${WRKDIR} PATCHDIR=${PATCHDIR} \
+		PATCH_WRKSRC=${PATCH_WRKSRC} \
+		STRIP_COMPONENTS="${PATCH_STRIP:S/-p//}" \
+		${SH} ${SCRIPTSDIR}/smart_makepatch.sh
 .endif
 
 
@@ -1445,7 +1413,7 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .include "${PORTSDIR}/Mk/bsd.gstreamer.mk"
 .endif
 
-.if defined(USE_SDL) || defined(WANT_SDL)
+.if defined(USE_SDL)
 .include "${PORTSDIR}/Mk/bsd.sdl.mk"
 .endif
 
@@ -1916,7 +1884,7 @@ _FORCE_POST_PATTERNS=	rmdir kldxref mkfontscale mkfontdir fc-cache \
 .include "${PORTSDIR}/Mk/bsd.qt.mk"
 .endif
 
-.if defined(USE_SDL) || defined(WANT_SDL)
+.if defined(USE_SDL)
 .include "${PORTSDIR}/Mk/bsd.sdl.mk"
 .endif
 
@@ -1987,7 +1955,6 @@ REINPLACE_CMD?=	${SED} ${REINPLACE_ARGS}
 EXTRACT_COOKIE?=	${WRKDIR}/.extract_done.${PORTNAME}.${PREFIX:S/\//_/g}
 CONFIGURE_COOKIE?=	${WRKDIR}/.configure_done.${PORTNAME}.${PREFIX:S/\//_/g}
 INSTALL_COOKIE?=	${WRKDIR}/.install_done.${PORTNAME}.${PREFIX:S/\//_/g}
-TEST_COOKIE?=		${WRKDIR}/.test_done.${PORTNAME}.${PREFIX:S/\//_/g}
 BUILD_COOKIE?=		${WRKDIR}/.build_done.${PORTNAME}.${PREFIX:S/\//_/g}
 PATCH_COOKIE?=		${WRKDIR}/.patch_done.${PORTNAME}.${PREFIX:S/\//_/g}
 PACKAGE_COOKIE?=	${WRKDIR}/.package_done.${PORTNAME}.${PREFIX:S/\//_/g}
@@ -2848,7 +2815,7 @@ clean:
 .if defined(IGNORE_SILENT)
 IGNORECMD=	${DO_NADA}
 .else
-IGNORECMD=	${ECHO_MSG} "===>  ${PKGNAME} "${IGNORE:Q}.;exit 1
+IGNORECMD=	${ECHO_MSG} "===>  ${PKGNAME} "${IGNORE:Q}. | ${FMT} 75 79 ; exit 1
 .endif
 
 _TARGETS=	check-sanity fetch checksum extract patch configure all build \
@@ -2981,7 +2948,7 @@ build: configure
 # Disable test
 .if defined(NO_TEST) && !target(test)
 test: stage
-	@${TOUCH} ${TOUCH_FLAGS} ${TEST_COOKIE}
+	@${DO_NADA}
 .endif
 
 # Disable package
@@ -5047,6 +5014,9 @@ check-orphans: check-plist
 stage-qa:
 	@${ECHO_MSG} "====> Running Q/A tests (stage-qa)"
 	@${SETENV} ${QA_ENV} ${SH} ${SCRIPTSDIR}/qa.sh
+.if !defined(DEVELOPER)
+	@${ECHO_MSG} "/!\\ To run stage-qa automatically add DEVELOPER=yes to your environment /!\\"
+.endif
 .endif
 
 # Fake installation of package so that user can pkg delete it later.
@@ -5728,6 +5698,8 @@ _STAGE_SEQ=		050:stage-message 100:stage-dir 150:run-depends \
 				${_OPTIONS_stage} ${_USES_stage}
 .if defined(DEVELOPER)
 _STAGE_SEQ+=	995:stage-qa
+.else
+stage-qa: stage
 .endif
 _TEST_DEP=		stage
 _TEST_SEQ=		100:test-message 150:test-depends 300:pre-test 500:do-test \
@@ -5783,7 +5755,7 @@ _${_t}_REAL_SUSEQ+=	${s}
 # See above *_SEQ and *_DEP. The _DEP will run before this defined target is
 # ran. The _SEQ will run as this target once _DEP is satisfied.
 
-.for target in extract patch configure build stage install test package
+.for target in extract patch configure build stage install package
 
 # Check if config dialog needs to show and execute it if needed. If is it not
 # needed (_OPTIONS_OK), then just depend on the cookie which is defined later
@@ -5850,6 +5822,10 @@ fetch: ${_FETCH_DEP} ${_FETCH_REAL_SEQ}
 
 .if !target(pkg)
 pkg: ${_PKG_DEP} ${_PKG_REAL_SEQ}
+.endif
+
+.if !target(test)
+test: ${_TEST_DEP} ${_TEST_REAL_SEQ}
 .endif
 
 .endif

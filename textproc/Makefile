@@ -1435,6 +1435,7 @@
     SUBDIR += rubygem-rdiscount
     SUBDIR += rubygem-rdtool
     SUBDIR += rubygem-redcarpet
+    SUBDIR += rubygem-reverse_markdown
     SUBDIR += rubygem-ri_cal
     SUBDIR += rubygem-rich
     SUBDIR += rubygem-rmmseg-cpp
@@ -1620,6 +1621,7 @@
     SUBDIR += words
     SUBDIR += wv
     SUBDIR += wv2
+    SUBDIR += xalan-c
     SUBDIR += xalan-j
     SUBDIR += xerces-c3
     SUBDIR += xerces-j
