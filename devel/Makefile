@@ -1561,7 +1561,7 @@
     SUBDIR += ocaml-sdl
     SUBDIR += ocaml-sem
     SUBDIR += ocaml-sexplib
-    SUBDIR += ocaml-typeconv
+    SUBDIR += ocaml-type_conv
     SUBDIR += ocaml-ulex
     SUBDIR += ocaml-uutf
     SUBDIR += ocaml-xstr
@@ -1998,6 +1998,7 @@
     SUBDIR += p5-Data-Section
     SUBDIR += p5-Data-Section-Simple
     SUBDIR += p5-Data-Serializer
+    SUBDIR += p5-Data-Serializer-Sereal
     SUBDIR += p5-Data-ShowTable
     SUBDIR += p5-Data-Stag
     SUBDIR += p5-Data-Stream-Bulk
@@ -4472,11 +4473,14 @@
     SUBDIR += py-zope.testing
     SUBDIR += py-zope.traversing
     SUBDIR += py-zope.viewlet
+    SUBDIR += py3-Jinja2
     SUBDIR += py3-babel
     SUBDIR += py3-dbus
     SUBDIR += py3-gobject3
+    SUBDIR += py3-jsonschema
     SUBDIR += py3-libpeas
     SUBDIR += py3-pytz
+    SUBDIR += py3-vcversioner
     SUBDIR += py3-xdg
     SUBDIR += py_static_check
     SUBDIR += pybugz
