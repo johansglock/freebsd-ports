@@ -19,6 +19,7 @@
     SUBDIR += R-cran-RcppEigen
     SUBDIR += R-cran-SparseM
     SUBDIR += R-cran-SuppDists
+    SUBDIR += R-cran-VGAM
     SUBDIR += R-cran-Zelig
     SUBDIR += R-cran-bdsmatrix
     SUBDIR += R-cran-car
@@ -35,8 +36,10 @@
     SUBDIR += R-cran-irlba
     SUBDIR += R-cran-labeling
     SUBDIR += R-cran-lme4
+    SUBDIR += R-cran-maxLik
     SUBDIR += R-cran-memisc
     SUBDIR += R-cran-minqa
+    SUBDIR += R-cran-miscTools
     SUBDIR += R-cran-mvtnorm
     SUBDIR += R-cran-nloptr
     SUBDIR += R-cran-nnls

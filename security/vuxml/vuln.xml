@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE vuxml PUBLIC "-//vuxml.org//DTD VuXML 1.1//EN" "http://www.vuxml.org/dtd/vuxml-1/vuxml-11.dtd">
 <!--
 Copyright 2003-2014 Jacques Vidrine and contributors
@@ -58,6 +57,287 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="548f74bd-993c-11e5-956b-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<!--pcbsd-->
+	<name>chromium-npapi</name>
+	<name>chromium-pulse</name>
+	<range><lt>47.0.2526.73</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2015/12/stable-channel-update.html">
+	  <p>41 security fixes in this release, inclduding:</p>
+	  <ul>
+	    <li>[558589] Critical CVE-2015-6765: Use-after-free in AppCache.
+	      Credit to anonymous.</li>
+	    <li>[551044] High CVE-2015-6766: Use-after-free in AppCache.
+	      Credit to anonymous.</li>
+	    <li>[554908] High CVE-2015-6767: Use-after-free in AppCache.
+	      Credit to anonymous.</li>
+	    <li>[556724] High CVE-2015-6768: Cross-origin bypass in DOM.
+	      Credit to Mariusz Mlynski.</li>
+	    <li>[534923] High CVE-2015-6769: Cross-origin bypass in core.
+	      Credit to Mariusz Mlynski.</li>
+	    <li>[541206] High CVE-2015-6770: Cross-origin bypass in DOM.
+	      Credit to Mariusz Mlynski.</li>
+	    <li>[544991] High CVE-2015-6771: Out of bounds access in v8.
+	      Credit to anonymous.</li>
+	    <li>[546545] High CVE-2015-6772: Cross-origin bypass in DOM.
+	      Credit to Mariusz Mlynski.</li>
+	    <li>[554946] High CVE-2015-6764: Out of bounds access in v8.
+	      Credit to Guang Gong of Qihoo 360 via pwn2own.</li>
+	    <li>[491660] High CVE-2015-6773: Out of bounds access in Skia.
+	      Credit to cloudfuzzer.</li>
+	    <li>[549251] High CVE-2015-6774: Use-after-free in Extensions.
+	      Credit to anonymous.</li>
+	    <li>[529012] High CVE-2015-6775: Type confusion in PDFium.
+	      Credit to Atte Kettunen of OUSPG.</li>
+	    <li>[457480] High CVE-2015-6776: Out of bounds access in PDFium.
+	      Credit to Hanno Böck.</li>
+	    <li>[544020] High CVE-2015-6777: Use-after-free in DOM.
+	      Credit to Long Liu of Qihoo 360Vulcan Team.</li>
+	    <li>[514891] Medium CVE-2015-6778: Out of bounds access in PDFium.
+	      Credit to Karl Skomski.</li>
+	    <li>[528505] Medium CVE-2015-6779: Scheme bypass in PDFium.
+	      Credit to Til Jasper Ullrich.</li>
+	    <li>[490492] Medium CVE-2015-6780: Use-after-free in Infobars.
+	      Credit to Khalil Zhani.</li>
+	    <li>[497302] Medium CVE-2015-6781: Integer overflow in Sfntly.
+	      Credit to miaubiz.</li>
+	    <li>[536652] Medium CVE-2015-6782: Content spoofing in Omnibox.
+	      Credit to Luan Herrera.</li>
+	    <li>[537205] Medium CVE-2015-6783: Signature validation issue in
+	      Android Crazy Linker. Credit to Michal Bednarski.</li>
+	    <li>[503217] Low CVE-2015-6784: Escaping issue in saved pages.
+	      Credit to Inti De Ceukelaire.</li>
+	    <li>[534542] Low CVE-2015-6785: Wildcard matching issue in CSP.
+	      Credit to Michael Ficarra / Shape Security.</li>
+	    <li>[534570] Low CVE-2015-6786: Scheme bypass in CSP. Credit to
+	      Michael Ficarra / Shape Security.</li>
+	    <li>[563930] CVE-2015-6787: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	    <li>  Multiple vulnerabilities in V8 fixed at the tip of the 4.7
+	      branch (currently 4.7.80.23).</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-6765</cvename>
+      <cvename>CVE-2015-6766</cvename>
+      <cvename>CVE-2015-6767</cvename>
+      <cvename>CVE-2015-6768</cvename>
+      <cvename>CVE-2015-6769</cvename>
+      <cvename>CVE-2015-6770</cvename>
+      <cvename>CVE-2015-6771</cvename>
+      <cvename>CVE-2015-6772</cvename>
+      <cvename>CVE-2015-6773</cvename>
+      <cvename>CVE-2015-6774</cvename>
+      <cvename>CVE-2015-6775</cvename>
+      <cvename>CVE-2015-6776</cvename>
+      <cvename>CVE-2015-6777</cvename>
+      <cvename>CVE-2015-6778</cvename>
+      <cvename>CVE-2015-6779</cvename>
+      <cvename>CVE-2015-6780</cvename>
+      <cvename>CVE-2015-6781</cvename>
+      <cvename>CVE-2015-6782</cvename>
+      <cvename>CVE-2015-6783</cvename>
+      <cvename>CVE-2015-6784</cvename>
+      <cvename>CVE-2015-6785</cvename>
+      <cvename>CVE-2015-6786</cvename>
+      <cvename>CVE-2015-6787</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2015/12/stable-channel-update.html</url>
+    </references>
+    <dates>
+      <discovery>2015-12-01</discovery>
+      <entry>2015-12-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="11351c82-9909-11e5-a9c8-14dae9d5a9d2">
+    <topic>piwik -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>piwik</name>
+	<range><lt>2.15.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Piwik changelog reports:</p>
+	<blockquote cite="http://piwik.org/changelog/piwik-2-15-0/">
+	  <p>This release is rated critical.
+
+	   We are grateful for Security researchers who disclosed
+	   security issues privately to the Piwik Security Response
+	   team: Elamaran Venkatraman, Egidio Romano and Dmitriy
+	   Shcherbatov. The following vulnerabilities were fixed:
+	   XSS, CSRF, possible file inclusion in older PHP versions
+	   (low impact), possible Object Injection Vulnerability
+	   (low impact).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-7815</cvename>
+      <cvename>CVE-2015-7816</cvename>
+      <url>http://piwik.org/changelog/piwik-2-15-0/</url>
+    </references>
+    <dates>
+      <discovery>2015-11-17</discovery>
+      <entry>2015-12-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d62ec98e-97d8-11e5-8c0e-080027b00c2e">
+    <topic>cyrus-imapd -- integer overflow in the start_octet addition</topic>
+    <affects>
+      <package>
+	<name>cyrus-imapd25</name>
+	<range><ge>2.5.0</ge><lt>2.5.7</lt></range>
+      </package>
+      <package>
+	<name>cyrus-imapd24</name>
+	<range><ge>2.4.0</ge><lt>2.4.18_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cyrus IMAP 2.5.7 Release Note states:</p>
+	<blockquote cite="https://docs.cyrus.foundation/imap/release-notes/2.5/x/2.5.7.html">
+	  <p>CVE-2015-8077, CVE-2015-8078: protect against integer overflow in urlfetch range checks</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8078</cvename>
+      <url>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8078</url>
+      <url>http://people.canonical.com/~ubuntu-security/cve/2015/CVE-2015-8078.html</url>
+      <url>https://security-tracker.debian.org/tracker/CVE-2015-8078</url>
+      <cvename>CVE-2015-8077</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8077</url>
+      <url>http://people.canonical.com/~ubuntu-security/cve/2015/CVE-2015-8077.html</url>
+      <url>https://security-tracker.debian.org/tracker/CVE-2015-8077</url>
+    </references>
+    <dates>
+      <discovery>2015-11-04</discovery>
+      <entry>2015-12-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="11c52bc6-97aa-11e5-b8df-14dae9d210b8">
+    <topic>django -- information leak vulnerability</topic>
+    <affects>
+      <package>
+	<name>py27-django</name>
+	<name>py32-django</name>
+	<name>py33-django</name>
+	<name>py34-django</name>
+	<range><lt>1.8.7</lt></range>
+      </package>
+      <package>
+	<name>py27-django17</name>
+	<name>py32-django17</name>
+	<name>py33-django17</name>
+	<name>py34-django17</name>
+	<range><lt>1.7.11</lt></range>
+      </package>
+      <package>
+	<name>py27-django-devel</name>
+	<name>py32-django-devel</name>
+	<name>py33-django-devel</name>
+	<name>py34-django-devel</name>
+	<range><le>20150709,1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Graham reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2015/nov/24/security-releases-issued/">
+	  <p>If an application allows users to specify an unvalidated
+	    format for dates and passes this format to the date filter, e.g. {{
+	    last_updated|date:user_date_format }}, then a malicious user could
+	    obtain any secret in the application's settings by specifying a settings
+	    key instead of a date format. e.g. "SECRET_KEY" instead of "j/m/Y".</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.djangoproject.com/weblog/2015/nov/24/security-releases-issued/</url>
+      <cvename>CVE-2015-8213</cvename>
+    </references>
+    <dates>
+      <discovery>2015-11-24</discovery>
+      <entry>2015-11-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fb2475c2-9125-11e5-bd18-002590263bf5">
+    <topic>kibana4 -- CSRF vulnerability</topic>
+    <affects>
+      <package>
+	<name>kibana4</name>
+	<name>kibana41</name>
+	<range><ge>4.0.0</ge><lt>4.1.3</lt></range>
+      </package>
+      <package>
+	<name>kibana42</name>
+	<range><ge>4.2.0</ge><lt>4.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elastic reports:</p>
+	<blockquote cite="https://www.elastic.co/community/security/">
+	  <p>Vulnerability Summary: Kibana versions prior to 4.1.3 and 4.2.1
+	    are vulnerable to a CSRF attack.</p>
+	  <p>Remediation Summary: Users should upgrade to 4.1.3 or 4.2.1.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8131</cvename>
+      <url>https://www.elastic.co/community/security/</url>
+    </references>
+    <dates>
+      <discovery>2015-11-17</discovery>
+      <entry>2015-11-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e359051d-90bd-11e5-bd18-002590263bf5">
+    <topic>a2ps -- format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>a2ps</name>
+	<range><lt>4.13b_8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jong-Gwon Kim reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/11/16/4">
+	  <p>When user runs a2ps with malicious crafted pro(a2ps prologue) file,
+	    an attacker can execute arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8107</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2015/11/16/4</url>
+    </references>
+    <dates>
+      <discovery>2015-11-16</discovery>
+      <entry>2015-11-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ecc268f2-8fc2-11e5-918c-bcaec565249c">
     <topic>libxslt -- DoS vulnability due to type confusing error</topic>
     <affects>

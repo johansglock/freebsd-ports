@@ -106,6 +106,7 @@
     SUBDIR += dimes
     SUBDIR += dosdetector
     SUBDIR += dpdk
+    SUBDIR += dpinger
     SUBDIR += drawterm
     SUBDIR += dropbox-api-command
     SUBDIR += dropbox-uploader
@@ -971,10 +972,12 @@
     SUBDIR += py-qt4-network
     SUBDIR += py-radix
     SUBDIR += py-raet
+    SUBDIR += py-ripe.atlas.cousteau
     SUBDIR += py-s3cmd
     SUBDIR += py-simplesoap
     SUBDIR += py-smbpasswd
     SUBDIR += py-soappy
+    SUBDIR += py-socketio-client
     SUBDIR += py-speedtest-cli
     SUBDIR += py-suds
     SUBDIR += py-terminado
@@ -1102,6 +1105,7 @@
     SUBDIR += rubygem-oauth
     SUBDIR += rubygem-oauth2
     SUBDIR += rubygem-octokit
+    SUBDIR += rubygem-octopress-deploy
     SUBDIR += rubygem-omniauth-facebook
     SUBDIR += rubygem-omniauth-github
     SUBDIR += rubygem-omniauth-github-discourse
@@ -1147,6 +1151,7 @@
     SUBDIR += samba4
     SUBDIR += samba41
     SUBDIR += samba42
+    SUBDIR += samba43
     SUBDIR += samplicator
     SUBDIR += sbd
     SUBDIR += scamper

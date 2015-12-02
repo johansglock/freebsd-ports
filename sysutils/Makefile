@@ -76,7 +76,6 @@
     SUBDIR += bareos-client-static
     SUBDIR += bareos-docs
     SUBDIR += bareos-server
-    SUBDIR += bashburn
     SUBDIR += batmon
     SUBDIR += battfink
     SUBDIR += battmond
@@ -773,6 +772,7 @@
     SUBDIR += py-croniter
     SUBDIR += py-crontab
     SUBDIR += py-danzfs
+    SUBDIR += py-dlipower
     SUBDIR += py-drmaa
     SUBDIR += py-execnet
     SUBDIR += py-ezjailremote
@@ -817,6 +817,7 @@
     SUBDIR += racktables
     SUBDIR += radeontool
     SUBDIR += radmind
+    SUBDIR += rainbarf
     SUBDIR += raincoat
     SUBDIR += rcadm
     SUBDIR += rclean
