@@ -42,8 +42,8 @@ QUICK GUIDE TO ADDING A NEW ENTRY
 6. profit!
 
 Additional tests can be done this way:
- $ env PKG_DBDIR=/usr/ports/security/vuxml pkg audit py26-django-1.6
- $ env PKG_DBDIR=/usr/ports/security/vuxml pkg audit py27-django-1.6.1
+ $ pkg audit -f ./vuln.xml py26-django-1.6
+ $ pkg audit -f ./vuln.xml py27-django-1.6.1
 
 Extensive documentation of the format and help with writing and verifying
 a new entry is available in The Porter's Handbook at:
@@ -58,6 +58,106 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a5934ba8-a376-11e5-85e9-14dae9d210b8">
+    <topic>java -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openjdk8</name>
+	<name>openjdk8-jre</name>
+	<range><lt>8.66.17</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oracle reports:</p>
+	<blockquote cite="http://www.oracle.com/technetwork/topics/security/cpuoct2015-2367953.html#AppendixJAVA">
+	  <p>This Critical Patch Update contains 25 new security fixes
+	    for Oracle Java SE.  24 of these vulnerabilities may be remotely
+	    exploitable without authentication, i.e., may be exploited over a
+	    network without the need for a username and password.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.oracle.com/technetwork/topics/security/cpuoct2015-2367953.html#AppendixJAVA</url>
+      <cvename>CVE-2015-4835</cvename>
+      <cvename>CVE-2015-4881</cvename>
+      <cvename>CVE-2015-4843</cvename>
+      <cvename>CVE-2015-4883</cvename>
+      <cvename>CVE-2015-4860</cvename>
+      <cvename>CVE-2015-4805</cvename>
+      <cvename>CVE-2015-4844</cvename>
+      <cvename>CVE-2015-4901</cvename>
+      <cvename>CVE-2015-4868</cvename>
+      <cvename>CVE-2015-4810</cvename>
+      <cvename>CVE-2015-4806</cvename>
+      <cvename>CVE-2015-4871</cvename>
+      <cvename>CVE-2015-4902</cvename>
+      <cvename>CVE-2015-4840</cvename>
+      <cvename>CVE-2015-4882</cvename>
+      <cvename>CVE-2015-4842</cvename>
+      <cvename>CVE-2015-4734</cvename>
+      <cvename>CVE-2015-4903</cvename>
+      <cvename>CVE-2015-4803</cvename>
+      <cvename>CVE-2015-4893</cvename>
+      <cvename>CVE-2015-4911</cvename>
+      <cvename>CVE-2015-4872</cvename>
+      <cvename>CVE-2015-4906</cvename>
+      <cvename>CVE-2015-4916</cvename>
+      <cvename>CVE-2015-4908</cvename>
+    </references>
+    <dates>
+      <discovery>2015-10-20</discovery>
+      <entry>2015-12-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="daadef86-a366-11e5-8b40-20cf30e32f6d">
+    <topic>subversion -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>subversion17</name>
+	<range><ge>1.7.0</ge><lt>1.7.22_1</lt></range>
+      </package>
+      <package>
+	<name>subversion18</name>
+	<range><ge>1.8.0</ge><lt>1.8.15</lt></range>
+      </package>
+      <package>
+	<name>subversion</name>
+	<range><ge>1.9.0</ge><lt>1.9.3</lt></range>
+      </package>
+      <package>
+	<name>mod_dav_svn</name>
+	<range><ge>1.7.0</ge><lt>1.7.22_1</lt></range>
+	<range><ge>1.8.0</ge><lt>1.8.15</lt></range>
+	<range><ge>1.9.0</ge><lt>1.9.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Subversion Project reports:</p>
+	<blockquote cite="http://subversion.apache.org/security/">
+	  <p>Remotely triggerable heap overflow and out-of-bounds read caused
+	    by integer overflow in the svn:// protocol parser.</p>
+	  <p>Remotely triggerable heap overflow and out-of-bounds read in
+	    mod_dav_svn caused by integer overflow when parsing skel-encoded
+	    request bodies.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-5343</cvename>
+      <url>http://subversion.apache.org/security/CVE-2015-5343-advisory.txt</url>
+      <cvename>CVE-2015-5259</cvename>
+      <url>http://subversion.apache.org/security/CVE-2015-5259-advisory.txt</url>
+    </references>
+    <dates>
+      <discovery>2015-11-14</discovery>
+      <entry>2015-12-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="72c145df-a1e0-11e5-8ad0-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
