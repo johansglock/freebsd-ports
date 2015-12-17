@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sonarr
-PORTVERSION=	2.0.0.3573
+PORTVERSION=	2.0.0.3645
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://download.sonarr.tv/v2/master/mono/
 DISTNAME=	NzbDrone.master.${PORTVERSION}.mono
@@ -21,13 +21,10 @@ NO_BUILD=	YES
 WRKSRC=	${WRKDIR}/NzbDrone
 
 USERS=	sonarr
-GROUPS=	nobody
-
-.include <bsd.port.pre.mk>
 
 do-install:
 	${INSTALL} -d -m 755 ${STAGEDIR}/${DATADIR}
-	${CP} -R ${WRKSRC}/ ${STAGEDIR}/${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DATADIR}
 	${MKDIR} ${STAGEDIR}/${PREFIX}/sonarr
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
