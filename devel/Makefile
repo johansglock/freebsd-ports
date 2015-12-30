@@ -4069,7 +4069,7 @@
     SUBDIR += py-grizzled
     SUBDIR += py-grouch
     SUBDIR += py-gyp-devel
-    SUBDIR += py-hashring
+    SUBDIR += py-hash_ring
     SUBDIR += py-hghooks
     SUBDIR += py-hgsubversion
     SUBDIR += py-hgtools
@@ -5029,6 +5029,7 @@
     SUBDIR += rubygem-shoulda-context
     SUBDIR += rubygem-shoulda-matchers
     SUBDIR += rubygem-sidekiq
+    SUBDIR += rubygem-sidekiq-cron
     SUBDIR += rubygem-sidetiq
     SUBDIR += rubygem-sigdump
     SUBDIR += rubygem-simple_form
@@ -5049,6 +5050,7 @@
     SUBDIR += rubygem-sprockets3
     SUBDIR += rubygem-spruz
     SUBDIR += rubygem-state_machine
+    SUBDIR += rubygem-state_machines
     SUBDIR += rubygem-statsd
     SUBDIR += rubygem-stella
     SUBDIR += rubygem-stemmer
@@ -5189,7 +5191,6 @@
     SUBDIR += subversion
     SUBDIR += subversion-book
     SUBDIR += subversion-static
-    SUBDIR += subversion17
     SUBDIR += subversion18
     SUBDIR += subversive
     SUBDIR += svk
