@@ -304,6 +304,7 @@
     SUBDIR += libpwquality
     SUBDIR += libpwstor
     SUBDIR += libressl
+    SUBDIR += libressl-devel
     SUBDIR += libscrypt
     SUBDIR += libsecret
     SUBDIR += libsectok
@@ -853,6 +854,7 @@
     SUBDIR += py-pyelliptic
     SUBDIR += py-pylibacl
     SUBDIR += py-pyme
+    SUBDIR += py-pynacl
     SUBDIR += py-pyptlib
     SUBDIR += py-pyscard
     SUBDIR += py-pysha3
