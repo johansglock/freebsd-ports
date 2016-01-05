@@ -58,6 +58,120 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b65e4914-b3bc-11e5-8255-5453ed2e2b49">
+    <topic>tiff -- out-of-bounds read in CIE Lab image format</topic>
+    <affects>
+      <package>
+	<name>tiff</name>
+	<range><le>4.0.6</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>zzf of Alibaba discovered an out-of-bounds vulnerability in the code
+	  processing the LogLUV and CIE Lab image format files. An attacker
+	  could create a specially-crafted TIFF file that could cause libtiff
+	  to crash.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8683</cvename>
+      <mlist>http://www.openwall.com/lists/oss-security/2015/12/25/2</mlist>
+    </references>
+    <dates>
+      <discovery>2015-12-25</discovery>
+      <entry>2016-01-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="bd349f7a-b3b9-11e5-8255-5453ed2e2b49">
+    <topic>tiff -- out-of-bounds read in tif_getimage.c</topic>
+    <affects>
+      <package>
+	<name>tiff</name>
+	<range><le>4.0.6</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>LMX of Qihoo 360 Codesafe Team discovered an out-of-bounds read in
+	  tif_getimage.c. An attacker could create a specially-crafted TIFF
+	  file that could cause libtiff to crash.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8665</cvename>
+      <mlist>http://www.openwall.com/lists/oss-security/2015/12/24/2</mlist>
+    </references>
+    <dates>
+      <discovery>2015-12-24</discovery>
+      <entry>2016-01-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="86c3c66e-b2f5-11e5-863a-b499baebfeaf">
+    <topic>unzip -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>unzip</name>
+	<range><lt>6.0_7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gustavo Grieco reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2015/09/07/4">
+	 <p>Two issues were found in unzip 6.0:</p>
+	 <p> * A heap overflow triggered by unzipping a file with password
+	    (e.g unzip -p -P x sigsegv.zip).</p>
+	 <p> * A denegation of service with a file that never finishes unzipping
+	    (e.g. unzip sigxcpu.zip).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2015/09/07/4</url>
+      <freebsdpr>ports/204413</freebsdpr>
+      <cvename>CVE-2015-7696</cvename>
+      <cvename>CVE-2015-7697</cvename>
+    </references>
+    <dates>
+      <discovery>2015-09-26</discovery>
+      <entry>2016-01-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="bb961ff3-b3a4-11e5-8255-5453ed2e2b49">
+    <topic>cacti -- SQL injection vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cacti</name>
+	<range><le>0.8.8f_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8369">
+	  <p>SQL injection vulnerability in include/top_graph_header.php in
+	    Cacti 0.8.8f and earlier allows remote attackers to execute arbitrary
+	    SQL commands via the rra_id parameter in a properties action to
+	    graph.php.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-8369</cvename>
+      <url>http://bugs.cacti.net/view.php?id=2646</url>
+      <url>http://svn.cacti.net/viewvc?view=rev&amp;revision=7767</url>
+      <mlist>http://seclists.org/fulldisclosure/2015/Dec/8</mlist>
+    </references>
+    <dates>
+      <discovery>2015-12-05</discovery>
+      <entry>2016-01-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="59e7eb28-b309-11e5-af83-80ee73b5dcf5">
     <topic>kea -- unexpected termination while handling a malformed packet</topic>
     <affects>
@@ -70,7 +184,6 @@ Notes:
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>ISC Support reports:</p>
-
 	<blockquote cite="https://kb.isc.org/article/AA-01318/0/CVE-2015-8373-ISC-Kea%3A-unexpected-termination-while-handling-a-malformed-packet.html">
 	  <p>ISC Kea may terminate unexpectedly (crash) while handling
 	    a malformed client packet.  Related defects in the kea-dhcp4
@@ -79,7 +192,6 @@ Notes:
 	    An attacker sending a crafted malformed packet can cause
 	    an ISC Kea server providing DHCP services to IPv4 or IPv6
 	    clients to exit unexpectedly.</p>
-
 	  <ul>
 	    <li><p>The kea-dhcp4 server is vulnerable only in versions
 		  0.9.2 and 1.0.0-beta, and furthermore only when logging
@@ -87,7 +199,6 @@ Notes:
 		  versions 0.9.1 or lower, and servers which are not
 		  logging or are logging at debug level 39 or below are
 		  not vulnerable.</p></li>
-
 	    <li><p>The kea-dhcp6 server is vulnerable only in versions
 		  0.9.2 and 1.0.0-beta, and furthermore only when
 		  logging at debug level 45 or higher.  Servers running
