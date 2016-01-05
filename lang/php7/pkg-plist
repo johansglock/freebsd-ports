@@ -244,3 +244,5 @@ man/man8/php-fpm.8.gz
 sbin/php-fpm
 share/php/fpm/status.html
 @dir include/php/include
+%%EMBED%%include/php/sapi/embed/php_embed.h
+%%EMBED%%lib/libphp7.so
