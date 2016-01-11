@@ -3988,6 +3988,7 @@
     SUBDIR += py-darcsver
     SUBDIR += py-dateutil
     SUBDIR += py-dbus
+    SUBDIR += py-debtcollector
     SUBDIR += py-decorator
     SUBDIR += py-decoratortools
     SUBDIR += py-defusedxml
@@ -4145,6 +4146,7 @@
     SUBDIR += py-mock
     SUBDIR += py-mongoengine
     SUBDIR += py-mongokit
+    SUBDIR += py-monotonic
     SUBDIR += py-more-itertools
     SUBDIR += py-mox
     SUBDIR += py-msgpack
