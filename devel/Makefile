@@ -412,7 +412,6 @@
     SUBDIR += dyncall
     SUBDIR += e00compr
     SUBDIR += e2fsprogs-libss
-    SUBDIR += e_dbus
     SUBDIR += easygit
     SUBDIR += eblob
     SUBDIR += ebnf2yacc
@@ -4178,6 +4177,7 @@
     SUBDIR += py-orbit
     SUBDIR += py-ordereddict
     SUBDIR += py-oslo.i18n
+    SUBDIR += py-oslo.serialization
     SUBDIR += py-oslo.utils
     SUBDIR += py-palm
     SUBDIR += py-parsedatetime
