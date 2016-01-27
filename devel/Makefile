@@ -1400,6 +1400,7 @@
     SUBDIR += llvm35
     SUBDIR += llvm36
     SUBDIR += llvm37
+    SUBDIR += llvm38
     SUBDIR += lm4tools
     SUBDIR += lmdbg
     SUBDIR += lndir
@@ -4907,6 +4908,7 @@
     SUBDIR += rubygem-lumberjack
     SUBDIR += rubygem-main
     SUBDIR += rubygem-map
+    SUBDIR += rubygem-memoist
     SUBDIR += rubygem-memoizable
     SUBDIR += rubygem-memoize
     SUBDIR += rubygem-mercenary
