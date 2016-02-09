@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmagick
-PORTVERSION=	1.1.7RC3
+PORTVERSION=	2.0.1RC3
 CATEGORIES=	graphics
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
