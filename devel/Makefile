@@ -1392,6 +1392,7 @@
     SUBDIR += linux_libusb
     SUBDIR += lion
     SUBDIR += lldb37
+    SUBDIR += lldb38
     SUBDIR += llnextgen
     SUBDIR += llvm-cheri
     SUBDIR += llvm-devel
@@ -4180,6 +4181,7 @@
     SUBDIR += py-omniorb
     SUBDIR += py-omniorb-3
     SUBDIR += py-optik
+    SUBDIR += py-option_merge
     SUBDIR += py-orbit
     SUBDIR += py-ordereddict
     SUBDIR += py-oslo.i18n
@@ -4377,6 +4379,7 @@
     SUBDIR += py-tempora
     SUBDIR += py-tempstorage
     SUBDIR += py-termcolor
+    SUBDIR += py-terminable_thread
     SUBDIR += py-termstyle
     SUBDIR += py-testgears
     SUBDIR += py-testoob

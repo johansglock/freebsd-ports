@@ -55,9 +55,142 @@ Help is also available from ports-security@freebsd.org.
 Notes:
   * Please add new entries to the beginning of this file.
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
-
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5d8e56c3-9e67-4d5b-81c9-3a409dfd705f">
+    <topic>flash -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-c6-flashplugin</name>
+	<name>linux-f10-flashplugin</name>
+	<name>linux-c6_64-flashplugin</name>
+	<range><lt>11.2r202.569</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://helpx.adobe.com/security/products/flash-player/apsb16-04.html">
+	  <p>These updates resolve a type confusion vulnerability that
+	    could lead to code execution (CVE-2016-0985).</p>
+	  <p>These updates resolve use-after-free vulnerabilities that
+	    could lead to code execution (CVE-2016-0973, CVE-2016-0974,
+	    CVE-2016-0975, CVE-2016-0982, CVE-2016-0983, CVE-2016-0984).</p>
+	  <p>These updates resolve a heap buffer overflow vulnerability
+	    that could lead to code execution (CVE-2016-0971).</p>
+	  <p>These updates resolve memory corruption vulnerabilities
+	    that could lead to code execution (CVE-2016-0964,
+	    CVE-2016-0965, CVE-2016-0966, CVE-2016-0967, CVE-2016-0968,
+	    CVE-2016-0969, CVE-2016-0970, CVE-2016-0972, CVE-2016-0976,
+	    CVE-2016-0977, CVE-2016-0978, CVE-2016-0979, CVE-2016-0980,
+	    CVE-2016-0981).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-0964</cvename>
+      <cvename>CVE-2015-0965</cvename>
+      <cvename>CVE-2015-0966</cvename>
+      <cvename>CVE-2015-0967</cvename>
+      <cvename>CVE-2015-0968</cvename>
+      <cvename>CVE-2015-0969</cvename>
+      <cvename>CVE-2015-0970</cvename>
+      <cvename>CVE-2015-0971</cvename>
+      <cvename>CVE-2015-0972</cvename>
+      <cvename>CVE-2015-0973</cvename>
+      <cvename>CVE-2015-0974</cvename>
+      <cvename>CVE-2015-0975</cvename>
+      <cvename>CVE-2015-0976</cvename>
+      <cvename>CVE-2015-0977</cvename>
+      <cvename>CVE-2015-0978</cvename>
+      <cvename>CVE-2015-0979</cvename>
+      <cvename>CVE-2015-0980</cvename>
+      <cvename>CVE-2015-0981</cvename>
+      <cvename>CVE-2015-0982</cvename>
+      <cvename>CVE-2015-0983</cvename>
+      <cvename>CVE-2015-0984</cvename>
+      <cvename>CVE-2015-0985</cvename>
+      <url>https://helpx.adobe.com/security/products/flash-player/apsb16-04.html</url>
+    </references>
+    <dates>
+      <discovery>2016-02-09</discovery>
+      <entry>2016-02-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="515b4327-cf8a-11e5-96d6-14dae9d210b8">
+    <topic>dnscrypt-proxy -- code execution</topic>
+    <affects>
+      <package>
+	<name>dnscrypt-proxy</name>
+	<range><ge>1.1.0</ge><lt>1.6.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Frank Denis reports:</p>
+	<blockquote cite="ihttps://github.com/jedisct1/dnscrypt-proxy/blob/1d129f7d5f0d469308967cbe4eacb4a6919f1fa1/NEWS#L2-L8">
+	  <p>Malformed packets could lead to denial of service or code
+	    execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/jedisct1/dnscrypt-proxy/blob/1d129f7d5f0d469308967cbe4eacb4a6919f1fa1/NEWS#L2-L8</url>
+    </references>
+    <dates>
+      <discovery>2016-02-02</discovery>
+      <entry>2016-02-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="36034227-cf81-11e5-9c2b-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<name>chromium-npapi</name>
+	<name>chromium-pulse</name>
+	<range><lt>48.0.2564.109</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2016/02/stable-channel-update_9.html">
+	  <p>6 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[546677] High CVE-2016-1622: Same-origin bypass in Extensions.
+	      Credit to anonymous.</li>
+	    <li>[577105] High CVE-2016-1623: Same-origin bypass in DOM. Credit
+	      to Mariusz Mlynski.</li>
+	    <li>[583607] High CVE-2016-1624: Buffer overflow in Brotli. Credit
+	      to lukezli.</li>
+	    <li>[509313] Medium CVE-2016-1625: Navigation bypass in Chrome
+	      Instant. Credit to Jann Horn.</li>
+	    <li>[571480] Medium CVE-2016-1626: Out-of-bounds read in PDFium.
+	      Credit to anonymous, working with HP's Zero Day Initiative.</li>
+	    <li>[585517] CVE-2016-1627: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2016-1622</cvename>
+      <cvename>CVE-2016-1623</cvename>
+      <cvename>CVE-2016-1624</cvename>
+      <cvename>CVE-2016-1625</cvename>
+      <cvename>CVE-2016-1626</cvename>
+      <cvename>CVE-2016-1627</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2016/02/stable-channel-update_9.html</url>
+    </references>
+    <dates>
+      <discovery>2016-02-08</discovery>
+      <entry>2016-02-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8f10fa04-cf6a-11e5-96d6-14dae9d210b8">
     <topic>graphite2 -- code execution vulnerability</topic>
     <affects>
